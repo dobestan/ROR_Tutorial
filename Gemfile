@@ -3,14 +3,20 @@ ruby '2.0.0'
 
 gem 'rails', '4.0.2'
 
-gem 'sqlite3'
-gem 'rspec-rails'
+group :development, :test do
+  gem 'sqlite3'
+  gem 'rspec-rails'
+end
 
-gem 'selenium-webdriver'
-gem 'capybara'
+group :test do
+  gem 'selenium-webdriver'
+  gem 'capybara'
+end
 
-gem 'pg'
-gem 'rails_12factor'
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
+end
 
 gem 'sass-rails', '~> 4.0.0'
 gem 'uglifier', '>= 1.3.0'
