@@ -31,4 +31,23 @@ describe "Authentication" do
       it { should_not have_link('Sign in',      href: signin_path) }
     end
   end
+
+  describe "authorization" do
+    let(:user) { FactoryGirl.create(:user)}
+
+    describe "for non-signed-in users" do
+      describe "in the Users controller" do
+
+        describe "visiting the edit page" do
+          before { visit edit_user_path(user) }
+          it {should have_title('Sign in')}
+        end
+
+        describe "submitting to the update action" do
+          before { patch user_path(user)}
+          specify { expect(response).to redirect_to(signin_path) }
+        end
+      end
+    end
+  end
 end
