@@ -57,6 +57,8 @@ GEM
     factory_girl_rails (4.3.0)
       factory_girl (~> 4.3.0)
       railties (>= 3.0.0)
+    faker (1.2.0)
+      i18n (~> 0.5)
     ffi (1.9.3)
     formatador (0.2.4)
     guard (2.3.0)
@@ -207,6 +209,7 @@ DEPENDENCIES
   childprocess
   coffee-rails (~> 4.0.0)
   factory_girl_rails
+  faker
   guard-rspec
   guard-spork
   jbuilder (~> 1.2)
